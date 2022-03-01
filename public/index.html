@@ -14,24 +14,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/scripts/client.js" /></script>
+  <script src="/scripts/client.js" /></script>
+  <script src="/scripts/composer-char-counter.js" /></script>
   
   <title>Tweeter Project</title>
 </head>
 <header>
   <nav>
     <div class="navtitle">
-      <img src="images/twitta.png" width="80px"><span>Twitta</span>
+      <img src="images/twitta.png" width="80px">
+      <span>Twitta</span>
     </div>
     <div class="menu-down">
       <div>Write a new tweet</div>
       <div><i class="fa-solid fa-angles-down"></i></div>
     </div>
   </nav>
-  <div class="header-elements">
+  <section class="header-elements">
     <img src="images/prof-pic.png" width="250px">
     <span class="profile-name">davincecode</span>
-  </div>
+  </section>
 </header>
 <body>
   <main>
@@ -55,29 +57,7 @@
           <p>@username</p>
         </div>
       </section>
-      <section class="tweet-tweet">
-        <p>Nulla nulla occaecat adipisicing anim reprehenderit magna pariatur dolore voluptate deserunt.</p>
-      </section>
-      <section class="tweet-info">
-        <time>2 hours ago</time>
-        <aside>
-          <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
-          <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
-          <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
-        </aside>
-      </section>
-    </article>
-    <article class="tweet-container">
-      <section class="tweet-author">
-        <div class="auth-info">
-          <img src="images/prof-pic.png" width="50px">
-          <span class="auth-name">Newton</span>
-        </div>
-        <div class="auth-username">
-          <p>@username</p>
-        </div>
-      </section>
-      <section class="tweet-tweet">
+      <section class="article-tweet">
         <p>Nulla nulla occaecat adipisicing anim reprehenderit magna pariatur dolore voluptate deserunt.</p>
       </section>
       <section class="tweet-info">
@@ -90,20 +70,5 @@
       </section>
     </article>
   </main>
-  <script>
-    $(document).ready(function () {
-        let textTweet = $(".textTweet");
-        let maxlength = parseInt(textTweet.attr("maxlength"), 10);
-
-        textTweet.on("keyup keypress change", function () {
-          charCount = $(this).val().length;
-          charRemain = maxlength - charCount;
-          $(".char-remain").text(charRemain);
-        });
-      });
-
-
-  </script>
-<script src="/public/scripts/composer-char-counter.js"></script>
 </body>
 </html>

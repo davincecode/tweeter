@@ -23,6 +23,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial;
 }
 
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
 p {
   font-size: 0.8em;
 }
@@ -108,7 +112,7 @@ main {
   color: #b2b2b2;
 }
 
-.tweet-tweet {
+.article-tweet {
   border-bottom: 3px solid #545454;
 }
 
@@ -126,6 +130,3 @@ main {
   justify-content: space-between;
   margin-top: 10px;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
