@@ -1,29 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/client.js" /></script>
+  
+  <title>Tweeter Project</title>
+</head>
+<header>
+  <nav>
+    <div class="navtitle">
+      <img src="images/twitta.png" width="80px"><span>Twitta</span>
+    </div>
+    <div class="menu-down">
+      <div>Write a new tweet</div>
+      <div><i class="fa-solid fa-angles-down"></i></div>
+    </div>
+  </nav>
+  <div class="header-elements">
+    <img src="images/prof-pic.png" width="250px">
+    <span class="profile-name">davincecode</span>
+  </div>
+</header>
+<body>
+  <main>
+    <form action="/tweets" method="post">
+      <div class="new-tweet-container">
+        <label for="tweet-text" class="ask-to-tweet">What are you humming about?</label>
+          <textarea class="textTweet" name="text" maxlength="140"></textarea>
+        <section class="tweet-btn-ctr">
+          <button class="btn-tweet" type="sumbit">Tweet</button>
+          <output for="tweet-text" class="char-remain">140</output>
+        </section>
+      </div>
+    </form>
+    <article class="tweet-container">
+      <section class="tweet-author">
+        <div class="auth-info">
+          <img src="images/prof-pic.png" width="50px">
+          <span class="auth-name">Newton</span>
+        </div>
+        <div class="auth-username">
+          <p>@username</p>
+        </div>
+      </section>
+      <section class="tweet-tweet">
+        <p>Nulla nulla occaecat adipisicing anim reprehenderit magna pariatur dolore voluptate deserunt.</p>
+      </section>
+      <section class="tweet-info">
+        <time>2 hours ago</time>
+        <aside>
+          <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
+          <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
+          <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
+        </aside>
+      </section>
+    </article>
+    <article class="tweet-container">
+      <section class="tweet-author">
+        <div class="auth-info">
+          <img src="images/prof-pic.png" width="50px">
+          <span class="auth-name">Newton</span>
+        </div>
+        <div class="auth-username">
+          <p>@username</p>
+        </div>
+      </section>
+      <section class="tweet-tweet">
+        <p>Nulla nulla occaecat adipisicing anim reprehenderit magna pariatur dolore voluptate deserunt.</p>
+      </section>
+      <section class="tweet-info">
+        <time>2 hours ago</time>
+        <aside>
+          <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
+          <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
+          <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
+        </aside>
+      </section>
+    </article>
+  </main>
+  <script>
+    $(document).ready(function () {
+        let textTweet = $(".textTweet");
+        let maxlength = parseInt(textTweet.attr("maxlength"), 10);
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+        textTweet.on("keyup keypress change", function () {
+          charCount = $(this).val().length;
+          charRemain = maxlength - charCount;
+          $(".char-remain").text(charRemain);
+        });
+      });
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
-
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  </script>
+<script src="/public/scripts/composer-char-counter.js"></script>
+</body>
 </html>

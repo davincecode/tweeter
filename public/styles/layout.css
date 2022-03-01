@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +20,112 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
 }
 
+p {
+  font-size: 0.8em;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.new-tweet-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.ask-to-tweet {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+
+.textTweet {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #545454;
+  width: 100%;
+  color: #545454;
+  font-size: 20px;
+  outline: none;
+  maxlength: 140;
+}
+
+.tweet-btn-ctr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-tweet {
+  font-size: 0.8em;
+  background: #018ec0;
+  font-family: helvetica;
+  color: #fff;
+  margin: 0.5em;
+  border-radius: 50px;
+  border-color: transparent;
+  border-style: inset;
+  width: 100px;
+  padding: 5px;
+}
+
+.tweet-container {
+  border: 3px solid #545454;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tweet-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.auth-name {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.auth-username {
+  display: flex;
+  align-items: center;
+  color: #b2b2b2;
+}
+
+.tweet-tweet {
+  border-bottom: 3px solid #545454;
+}
+
+.tweetlinks {
+  cursor: pointer;
+}
+
+.tweetlinks:hover {
+  color: #e0ad56de;
+}
+
+.tweet-info {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

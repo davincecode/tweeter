@@ -1,0 +1,16 @@
+.header-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 360px;
+  width: 100%;
+  margin-top: 120px;
+  background-image: url("https://www.transparenttextures.com/patterns/zig-zag.png");
+}
+
+.profile-name {
+  font-family: helvetica, arial, sans-serif;
+  fontweight: 300;
+  padding: 1em;
+}
