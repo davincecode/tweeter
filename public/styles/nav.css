@@ -23,5 +23,12 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 1em;
+  margin-right: 1.5em;
+}
+
+.drop-down {
+  background: transparent;
+  border: none;
+  color: antiquewhite;
+  cursor: pointer;
 }

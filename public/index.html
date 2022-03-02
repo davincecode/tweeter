@@ -30,7 +30,9 @@
     </div>
     <div class="menu-down">
       <div>Write a new tweet</div>
-      <div><i class="fa-solid fa-angles-down"></i></div>
+      <button class="drop-down" id="toggle-tweet">
+        <i class="fa-solid fa-angles-down"></i>
+      </button>
     </div>
   </nav>
   <section class="header-elements">
@@ -40,6 +42,7 @@
 </header>
 <body>
   <main>
+    <div id="toggle-content">
     <form action="/tweets" method="post" id="tweetUpdate">
       <div class="new-tweet-container">
         <label for="tweet-text" class="ask-to-tweet">What are you humming about?</label>
@@ -50,9 +53,11 @@
         </section>
       </div>
     </form>
+    </div>
     <article class="tweet-post">
       <div id="tweetLoad">Post</div>
     </article>
   </main>
+
 </body>
 </html>

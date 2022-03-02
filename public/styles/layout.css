@@ -79,6 +79,7 @@ main {
   border-style: inset;
   width: 100px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .tweet-container {
