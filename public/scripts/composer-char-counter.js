@@ -5,6 +5,11 @@ $(() => {
   textTweet.on("keyup keypress change", function () {
     charCount = $(this).val().length;
     charRemain = maxlength - charCount;
-    $(".char-remain").text(charRemain);
+    $(".counter").text(charRemain);
   });
+});
+
+$(() => {
+  timeago.render(document.querySelectorAll(".need_to_be_rendered"));
+  timeago.format(1473245023718);
 });
