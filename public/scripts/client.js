@@ -4,6 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(() => {
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+
+    let form = $("form").serialize();
+    $("#tweetLoad").append(form);
+  });
+
+  // $("form").submit(function (event) {
+
+  //   event.preventDefault();
+  // });
+
   const data = [
     {
       user: {
@@ -14,7 +26,7 @@ $(() => {
       content: {
         text: "If I have seen further it is by standing on the shoulders of giants",
       },
-      created_at: 1461116232227,
+      created_at: 1645986908314,
     },
     {
       user: {
@@ -25,7 +37,7 @@ $(() => {
       content: {
         text: "Je pense , donc je suis",
       },
-      created_at: 1461113959088,
+      created_at: 1646073308314,
     },
   ];
 
@@ -33,6 +45,8 @@ $(() => {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    // const tweets = $.getJSON("/tweets", data, success);
+
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       $(`.tweet-post`).append($tweet);

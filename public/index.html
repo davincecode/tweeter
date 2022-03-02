@@ -40,17 +40,19 @@
 </header>
 <body>
   <main>
-    <form action="/tweets" method="post">
+    <form action="/tweets" method="post" id="tweetUpdate">
       <div class="new-tweet-container">
         <label for="tweet-text" class="ask-to-tweet">What are you humming about?</label>
           <textarea class="textTweet" name="text" maxlength="140"></textarea>
         <section class="tweet-btn-ctr">
-          <button class="btn-tweet" type="sumbit">Tweet</button>
+          <button class="btn-tweet" id="submit">Tweet</button>
           <output for="tweet-text" class="counter">140</output>
         </section>
       </div>
     </form>
-    <article class="tweet-post"></article>
+    <article class="tweet-post">
+      <div id="tweetLoad">Post</div>
+    </article>
   </main>
 </body>
 </html>
