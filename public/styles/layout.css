@@ -54,7 +54,7 @@ main {
   font-size: 0.8em;
 }
 
-.textTweet {
+.tweetPost {
   background: transparent;
   border: none;
   border-bottom: 3px solid #545454;

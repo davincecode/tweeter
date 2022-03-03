@@ -7,14 +7,13 @@
 //$(() => {});
 
 $(() => {
-  //POST request
-
   // GET request
   const $container = $("div.container");
+  const $textTweet = $(".tweetPost");
 
   $.ajax({
     type: "GET",
-    url: "http://localhost:8080/tweets",
+    url: "/tweets",
     dataType: "json",
     success: function (data) {
       $.each(data, function (i, item) {
@@ -45,7 +44,42 @@ $(() => {
       });
     },
     error: function () {
-      console.log(`Error: ${error}`);
+      alert("Error: " + error);
     },
+  });
+
+  //POST request
+  $("#tweet-btn").on("click", function () {
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $textTweet.val(),
+      success: function (newData) {
+        $container.prepend(`
+        <div class="tweet-container">
+          <section class="tweet-author">
+          <div class="auth-info">
+            <img src="${newData.user.avatars}" width="50px">
+            <span class="auth-name">${newData.user.name}</span>
+          </div>
+          <div class="auth-username">
+            <p>${newData.user.handle}</p>
+          </div>
+        </section>
+        <section class="article-tweet">
+          <p>${newData.content.text}</p>
+        </section>
+        <section class="tweet-info">
+          <span class="need_to_be_rendered" datetime="${newData.user.created_at}"></span>
+          <aside>
+            <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
+            <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
+            <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
+          </aside>
+        </section>
+        </div>
+        `);
+      },
+    });
   });
 });
