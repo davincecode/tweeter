@@ -56,21 +56,25 @@ $(() => {
   });
 
   //POST request
-  $("#form").on("submit", function (event) {
-    const update = $(this).serialize();
+  // $("#form").on("submit", function (event) {
+  //   const update = $(this).serialize();
 
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: update,
-      success: function () {
-        addTweet(item);
-      },
-      error: function () {
-        alert("Error loading tweet");
-      },
-    });
-    event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "/tweets",
+  //     data: update,
+  //     success: function () {
+  //       addTweet(item);
+  //     },
+  //     error: function () {
+  //       alert("Error loading tweet");
+  //     },
+  //   });
+  //   event.preventDefault();
+  // });
+
+  $("#tweet-btn").click(function () {
+    $("#litshugas").prepend($("form").serialize());
   });
 });
 
