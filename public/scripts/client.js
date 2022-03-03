@@ -5,12 +5,12 @@
  */
 $(() => {
   //POST
-  // $.post("/tweets", function (event) {
-  //   event.preventDefault();
+  $.post("/tweets", function (event) {
+    event.preventDefault();
 
-  //   const elements = convertToHTML(tweets);
-  //   $("#tweetLoad").html(elements);
-  // });
+    const elements = convertToHTML(tweets);
+    $("#tweetLoad").html(elements);
+  });
 
   // $.ajax({
   //   type: "POST",
@@ -19,11 +19,6 @@ $(() => {
   //   success: success,
   //   dataType: dataType,
   // });
-
-  $("form").serialize();
-  $("#tweetLoad").text(str);
-
-  $("textarea").on("click", showValues);
 
   ////////////////////////////////////////////////////////////////
 
