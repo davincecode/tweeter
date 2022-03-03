@@ -55,26 +55,39 @@ $(() => {
   });
 
   //POST request
-  const update = $appendPost.val().serialize();
+  const update = $(this).serialize();
 
-  $("#btn-tweet").on("click", function (event) {
+  $("#form").on("submit", function (event) {
     event.preventDefault();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: update,
-      success: function () {
-        $("#post-container").html("<div id='message'>sht</div>");
-        $("#message")
-          .html("<h2>Contact Form Submitted!</h2>")
-          .append("<p>We will be in touch soon.</p>")
-          .hide()
-          .fadeIn(1500, function () {
-            $("#message").append(
-              "<img id='checkmark' src='images/check.png' />"
-            );
-          });
+      success: function (newItem) {
+        $container.prepend(`
+        <div class="tweet-container">
+          <section class="tweet-author">
+            <div class="auth-info">
+              <img src="${escape(newItem.user.avatars)}" width="50px">
+              <span class="auth-name">${escape(newItem.user.name)}</span>
+            </div>
+            <div class="auth-username">
+              <p>${escape(newItem.user.handle)}</p>
+            </div>
+          </section>
+          <section class="article-tweet">
+              <p>${escape(newItem.content.text)}</p>
+          </section>
+          <section class="tweet-info">
+              <div>${escape(timeago.format(newItem.created_at))}</div>
+            <aside>
+              <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
+              <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
+              <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
+            </aside>
+          </section>
+        </div>`);
       },
       error: function () {
         alert("Error loading tweet");
