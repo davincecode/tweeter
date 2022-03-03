@@ -44,17 +44,15 @@
   <main>
     <div class="new-tweet-container" id="toggle-content">
     <form action="/tweets" method="POST">
-      <textarea name="text" class="tweetPost" placeholder="What are you humming about?"></textarea>
+      <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
       <section class="tweet-btn-ctr">
-      <input class="btn-tweet" type="submit" id="tweet-btn">
+      <!-- <input class="btn-tweet" type="submit" id="tweet-btn"> -->
+      <button class="btn-tweet" id="tweet-btn">Submit</button>
       <span class="counter">140</span>
       </section>
     </form>
     </div>
-    <!-- <article class="tweet-post">
-    </article> -->
-    <div class="container" ></div>
-  </main>
-  
+    <article class="container" ></article>
+  </main> 
 </body>
 </html>
