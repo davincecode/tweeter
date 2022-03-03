@@ -55,34 +55,22 @@ $(() => {
     },
   });
 
-  POST request
-  $("#form").on("submit", function (event) {
-    const update = $(this).serialize();
+  //POST request
+  $("#tweet-it").on("click", function (event) {
+    event.preventDefault();
+
+    const update = $appendPost.serialize();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: update,
-      success: function () {
-        addTweet(item);
+      success: function (newItem) {
+        $data.prepend("<p>tweet: " + newItem.content + "</p>");
       },
       error: function () {
         alert("Error loading tweet");
       },
     });
-    event.preventDefault();
   });
-
-  // $("#tweet-btn").click(function () {
-  //   $("#litshugas").prepend($("form").serialize());
-  // });
 });
-
-// $(".container").html("<div id='message'></div>");
-// $("#message")
-//   .html("<h2>Contact Form Submitted!</h2>")
-//   .append("<p>We will be in touch soon.</p>")
-//   .hide()
-//   .fadeIn(1500, function () {
-//     $("#message").append("<img id='checkmark' src='images/check.png' />");
-//   });
