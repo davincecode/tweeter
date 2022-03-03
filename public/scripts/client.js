@@ -40,7 +40,6 @@ $(() => {
   }
 
   // GET request
-
   const loadTweets = function () {
     $.ajax({
       type: "GET",
@@ -58,7 +57,6 @@ $(() => {
   };
 
   //POST request
-
   $("#tweet-it").on("click", function (event) {
     event.preventDefault();
 
@@ -74,7 +72,6 @@ $(() => {
   loadTweets();
 
   // Toggle write a new tweet button
-
   $("#toggle-tweet").click(function () {
     $("#toggle-content").slideToggle(250);
     $("#appendPost").focus();
@@ -83,11 +80,9 @@ $(() => {
   });
 
   //Time posted
-
   timeago.format(1473245023718);
 
   // Clear textarea after post
-
   $("#tweet-it").click(function () {
     $("#appendPost").val("");
   });
