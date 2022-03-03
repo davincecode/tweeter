@@ -40,58 +40,35 @@ $(() => {
   }
 
   // GET request
-  $.ajax({
-    type: "GET",
-    url: "/tweets",
-    dataType: "json",
-    success: function (data) {
-      $.each(data, function (i, item) {
-        addTweet(item);
-      });
-    },
-    error: function () {
-      alert("Error: " + error);
-    },
-  });
+
+  const loadTweets = function () {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: function (data) {
+        $.each(data, function (i, item) {
+          addTweet(item);
+        });
+      },
+      error: function () {
+        alert("Error: " + error);
+      },
+    });
+  };
 
   //POST request
-  const update = $(this).serialize();
-
-  $("#form").on("submit", function (event) {
+  $("#tweet-it").on("click", function (event) {
     event.preventDefault();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
-      data: update,
-      success: function (newItem) {
-        $container.prepend(`
-        <div class="tweet-container">
-          <section class="tweet-author">
-            <div class="auth-info">
-              <img src="${escape(newItem.user.avatars)}" width="50px">
-              <span class="auth-name">${escape(newItem.user.name)}</span>
-            </div>
-            <div class="auth-username">
-              <p>${escape(newItem.user.handle)}</p>
-            </div>
-          </section>
-          <section class="article-tweet">
-              <p>${escape(newItem.content.text)}</p>
-          </section>
-          <section class="tweet-info">
-              <div>${escape(timeago.format(newItem.created_at))}</div>
-            <aside>
-              <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
-              <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
-              <a class="tweetlinks"><i class="fa-solid fa-heart"></i></a>
-            </aside>
-          </section>
-        </div>`);
-      },
-      error: function () {
-        alert("Error loading tweet");
-      },
-    });
+      data: $("#appendPost").serialize(),
+    })
+      .then(loadTweets)
+      .catch((error) => alert("error", error));
   });
+
+  loadTweets();
 });
