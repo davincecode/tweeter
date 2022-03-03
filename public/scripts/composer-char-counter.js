@@ -7,10 +7,14 @@ $(() => {
       ? counter.css("color", "red")
       : counter.css("color", "#545454");
   });
+});
 
-  timeago.render(document.querySelectorAll(".need_to_be_rendered"));
-
+$(() => {
   $("#toggle-tweet").click(function () {
     $("#toggle-content").toggle();
   });
+});
+
+$(() => {
+  timeago.render(document.querySelectorAll(".need_to_be_rendered"));
 });
