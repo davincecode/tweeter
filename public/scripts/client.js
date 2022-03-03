@@ -12,7 +12,6 @@ $(() => {
   };
 
   const $container = $("article.container");
-  const $appendPost = $("#appendPost").empty();
 
   function addTweet(item) {
     $container.prepend(`
@@ -56,17 +55,26 @@ $(() => {
   });
 
   //POST request
-  $("#tweet-it").on("click", function (event) {
-    event.preventDefault();
+  const update = $appendPost.val().serialize();
 
-    const update = $appendPost.serialize();
+  $("#btn-tweet").on("click", function (event) {
+    event.preventDefault();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: update,
-      success: function (newItem) {
-        $data.prepend("<p>tweet: " + newItem.content + "</p>");
+      success: function () {
+        $("#post-container").html("<div id='message'>sht</div>");
+        $("#message")
+          .html("<h2>Contact Form Submitted!</h2>")
+          .append("<p>We will be in touch soon.</p>")
+          .hide()
+          .fadeIn(1500, function () {
+            $("#message").append(
+              "<img id='checkmark' src='images/check.png' />"
+            );
+          });
       },
       error: function () {
         alert("Error loading tweet");
