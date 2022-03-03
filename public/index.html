@@ -43,16 +43,20 @@
 <body>
   <main>
     <div class="new-tweet-container" id="toggle-content">
-    <form action="/tweets" method="POST" class="new-tweet">
+    <form action="/tweets" method="POST" class="new-tweet" id="tweet-form">
       <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
       <section class="tweet-btn-ctr">
-      <button class="btn-tweet" type="submit" id="tweet-btn">Submit</button>
+      <input class="btn-tweet" type="button" id="tweet-it" value="Tweet" />
       <span class="counter">140</span>
       </section>
     </form>
     </div>
     <article class="container" ></article>
-    <div id="litshugas"></div>
+    <div id="post-container">
+    </div>
   </main> 
 </body>
+<footer>
+<p>davincecode</p>
+</footer>
 </html>

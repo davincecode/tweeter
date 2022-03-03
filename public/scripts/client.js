@@ -12,7 +12,6 @@ $(() => {
   };
 
   const $container = $("article.container");
-  const $appendPost = $("#appendPost").empty();
 
   function addTweet(item) {
     $container.prepend(`
@@ -41,48 +40,35 @@ $(() => {
   }
 
   // GET request
-  $.ajax({
-    type: "GET",
-    url: "/tweets",
-    dataType: "json",
-    success: function (data) {
-      $.each(data, function (i, item) {
-        addTweet(item);
-      });
-    },
-    error: function () {
-      alert("Error: " + error);
-    },
-  });
 
-  POST request
-  $("#form").on("submit", function (event) {
-    const update = $(this).serialize();
+  const loadTweets = function () {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: function (data) {
+        $.each(data, function (i, item) {
+          addTweet(item);
+        });
+      },
+      error: function () {
+        alert("Error: " + error);
+      },
+    });
+  };
+
+  //POST request
+  $("#tweet-it").on("click", function (event) {
+    event.preventDefault();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
-      data: update,
-      success: function () {
-        addTweet(item);
-      },
-      error: function () {
-        alert("Error loading tweet");
-      },
-    });
-    event.preventDefault();
+      data: $("#appendPost").serialize(),
+    })
+      .then(loadTweets)
+      .catch((error) => alert("error", error));
   });
 
-  // $("#tweet-btn").click(function () {
-  //   $("#litshugas").prepend($("form").serialize());
-  // });
+  loadTweets();
 });
-
-// $(".container").html("<div id='message'></div>");
-// $("#message")
-//   .html("<h2>Contact Form Submitted!</h2>")
-//   .append("<p>We will be in touch soon.</p>")
-//   .hide()
-//   .fadeIn(1500, function () {
-//     $("#message").append("<img id='checkmark' src='images/check.png' />");
-//   });
