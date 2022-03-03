@@ -16,5 +16,5 @@ $(() => {
 });
 
 $(() => {
-  timeago.render(document.querySelectorAll(".need_to_be_rendered"));
+  timeago.format(1473245023718);
 });

@@ -24,7 +24,7 @@ $(() => {
               <p>${item.content.text}</p>
           </section>
           <section class="tweet-info">
-              <span class="need_to_be_rendered" datetime="${item.user.created_at}"></span>
+              <div>${timeago.format(item.created_at)}</div>
             <aside>
               <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
               <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
