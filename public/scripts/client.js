@@ -55,8 +55,8 @@ $(() => {
     },
   });
 
-  //POST request
-  $("#tweet-btn").on("click", function (event) {
+  POST request
+  $("#form").on("submit", function (event) {
     const update = $(this).serialize();
 
     $.ajax({
@@ -73,9 +73,9 @@ $(() => {
     event.preventDefault();
   });
 
-  //   $("#tweet-btn").click(function () {
-  //     $("#litshugas").prepend($("form").serialize());
-  //   });
+  // $("#tweet-btn").click(function () {
+  //   $("#litshugas").prepend($("form").serialize());
+  // });
 });
 
 // $(".container").html("<div id='message'></div>");
