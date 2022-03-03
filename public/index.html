@@ -43,19 +43,31 @@
 <body>
   <main>
     <div id="toggle-content">
-    <form action="/tweets" method="post" id="tweetUpdate">
+    <!-- <form action="/tweets" method="POST">
       <div class="new-tweet-container">
         <label for="tweet-text" class="ask-to-tweet">What are you humming about?</label>
-          <textarea class="textTweet" name="text" maxlength="140"></textarea>
+          <textarea id="tweetUpdate" class="textTweet" name="text" maxlength="140"></textarea>
         <section class="tweet-btn-ctr">
-          <button class="btn-tweet" id="submit">Tweet</button>
+          <button class="btn-tweet" type="submit">Tweet</button>
           <output for="tweet-text" class="counter">140</output>
         </section>
       </div>
+    </form> -->
+    <div class="new-tweet-container">
+    <form action="/tweets" method="POST" class="ask-to-tweet">
+    
+      
+      <textarea name="text" class="textTweet" placeholder="What are you humming about?"></textarea>
+      
+      <input type="submit" value="Tweet">
+      <span class="counter">140</span>
+      
     </form>
+    </div>
     </div>
     <article class="tweet-post">
       <div id="tweetLoad">Post</div>
+
     </article>
   </main>
 

@@ -1,11 +1,11 @@
 $(() => {
-  let textTweet = $(".textTweet");
-  let maxlength = parseInt(textTweet.attr("maxlength"), 10);
-
-  textTweet.on("keyup keypress change", function () {
-    charCount = $(this).val().length;
-    charRemain = maxlength - charCount;
-    $(".counter").text(charRemain);
+  $("textarea").on("keyup", function (e) {
+    var charCount = $("textarea").val().length;
+    var counter = $(this).siblings(".counter");
+    counter.text(140 - charCount);
+    charCount > 140
+      ? counter.css("color", "red")
+      : counter.css("color", "#545454");
   });
 
   timeago.render(document.querySelectorAll(".need_to_be_rendered"));

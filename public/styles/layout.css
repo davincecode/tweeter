@@ -47,6 +47,8 @@ main {
 }
 
 .ask-to-tweet {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
   font-size: 0.8em;
 }
@@ -59,7 +61,6 @@ main {
   color: #545454;
   font-size: 20px;
   outline: none;
-  maxlength: 140;
 }
 
 .tweet-btn-ctr {
