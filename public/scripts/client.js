@@ -55,27 +55,27 @@ $(() => {
     },
   });
 
-  //POST request
-  // $("#form").on("submit", function (event) {
-  //   const update = $(this).serialize();
+  POST request
+  $("#form").on("submit", function (event) {
+    const update = $(this).serialize();
 
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "/tweets",
-  //     data: update,
-  //     success: function () {
-  //       addTweet(item);
-  //     },
-  //     error: function () {
-  //       alert("Error loading tweet");
-  //     },
-  //   });
-  //   event.preventDefault();
-  // });
-
-  $("#tweet-btn").click(function () {
-    $("#litshugas").prepend($("form").serialize());
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: update,
+      success: function () {
+        addTweet(item);
+      },
+      error: function () {
+        alert("Error loading tweet");
+      },
+    });
+    event.preventDefault();
   });
+
+  // $("#tweet-btn").click(function () {
+  //   $("#litshugas").prepend($("form").serialize());
+  // });
 });
 
 // $(".container").html("<div id='message'></div>");
