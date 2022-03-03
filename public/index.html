@@ -25,7 +25,7 @@
 <header>
   <nav>
     <div class="navtitle">
-      <img src="images/twitta.png" width="80px">
+      <a href="/"><img src="images/twitta.png" width="80px"></a>
       <span>Twitta</span>
     </div>
     <div class="menu-down">
@@ -36,17 +36,18 @@
     </div>
   </nav>
   <section class="header-elements">
-    <img src="images/prof-pic.png" width="250px">
+    <img src="images/prof-pic.png" width="200px">
     <span class="profile-name">davincecode</span>
   </section>
 </header>
 <body>
   <main>
     <div class="new-tweet-container" id="toggle-content">
-    <form action="/tweets" method="POST">
+      
+    <form action="/tweets" method="POST" class="new-tweet">
       <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
       <section class="tweet-btn-ctr">
-      <button class="btn-tweet" id="tweet-btn">Submit</button>
+      <button class="btn-tweet" type="submit" id="tweet-btn">Submit</button>
       <span class="counter">140</span>
       </section>
     </form>

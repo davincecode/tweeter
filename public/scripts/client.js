@@ -4,27 +4,33 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(() => {
-  // GET request
-  var $container = $("article.container");
-  var $appendPost = $("#appendPost");
+  //Function that prevents XSS attack
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const $container = $("article.container");
+  const $appendPost = $("#appendPost").empty();
 
   function addTweet(item) {
     $container.prepend(`
         <div class="tweet-container">
           <section class="tweet-author">
             <div class="auth-info">
-              <img src="${item.user.avatars}" width="50px">
-              <span class="auth-name">${item.user.name}</span>
+              <img src="${escape(item.user.avatars)}" width="50px">
+              <span class="auth-name">${escape(item.user.name)}</span>
             </div>
             <div class="auth-username">
-              <p>${item.user.handle}</p>
+              <p>${escape(item.user.handle)}</p>
             </div>
           </section>
           <section class="article-tweet">
-              <p>${item.content.text}</p>
+              <p>${escape(item.content.text)}</p>
           </section>
           <section class="tweet-info">
-              <div>${timeago.format(item.created_at)}</div>
+              <div>${escape(timeago.format(item.created_at))}</div>
             <aside>
               <a class="tweetlinks"><i class="fa-solid fa-flag"></i></a>
               <a class="tweetlinks"><i class="fa-solid fa-retweet"></i></a>
@@ -34,6 +40,7 @@ $(() => {
         </div>`);
   }
 
+  // GET request
   $.ajax({
     type: "GET",
     url: "/tweets",
@@ -49,19 +56,29 @@ $(() => {
   });
 
   //POST request
-  $("#tweet-btn").on("click", function () {
-    const update = { appendPost: $appendPost.val() };
+  $("#form").on("submit", function (event) {
+    const update = $(this).serialize();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: update,
-      success: function (newItem) {
-        addTweet(newItem);
+      success: function () {
+        addTweet(item);
       },
       error: function () {
         alert("Error loading tweet");
       },
     });
+    event.preventDefault();
   });
 });
+
+// $(".container").html("<div id='message'></div>");
+// $("#message")
+//   .html("<h2>Contact Form Submitted!</h2>")
+//   .append("<p>We will be in touch soon.</p>")
+//   .hide()
+//   .fadeIn(1500, function () {
+//     $("#message").append("<img id='checkmark' src='images/check.png' />");
+//   });
