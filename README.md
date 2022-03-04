@@ -4,15 +4,23 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
-!["Home page"](https://github.com/davincecode/tinyapp/blob/master/public/homepage.png)
+## Final Product
+
+## Desktop view
+
+!["Desktop"](https://github.com/davincecode/tweeter/blob/4653649ee6ad28877935ee7d3bc66e41bc3dd126/public/images/desktop.gif)
+
+## Mobile responsive
+
+!["Responsive"](https://github.com/davincecode/tweeter/blob/4653649ee6ad28877935ee7d3bc66e41bc3dd126/public/images/responsive.gif)
 
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
 2. Clone your repository onto your local device.
 3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+5. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
