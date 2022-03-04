@@ -15,8 +15,4 @@ $(() => {
       return counter.css("color", "#545454");
     }
   });
-
-  $("#tweet-it").click(function () {
-    $(".counter").text("140");
-  });
 });

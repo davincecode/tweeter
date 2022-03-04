@@ -87,6 +87,9 @@ $(() => {
 
   // Clear textarea after post
   $("#tweet-it").click(function () {
-    $("#appendPost").val("");
+    setTimeout(function () {
+      $("#appendPost").val("");
+      $(".counter").text("140");
+    }, 500);
   });
 });
