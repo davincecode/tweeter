@@ -3,13 +3,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  width: 100vw;
+  width: 100%;
   background: #018ec0;
   font-family: "Shadows Into Light", cursive;
   color: #fff;
   position: fixed;
   top: 0;
-  z-index: 99;
+}
+
+.logo {
+  display: none;
 }
 
 .navtitle {
@@ -31,4 +34,17 @@ nav {
   border: none;
   color: antiquewhite;
   cursor: pointer;
+}
+
+/* Smartphones: minimum width of 320px to maximum width of around 420px */
+@media only screen and (min-width: 320px) {
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5em;
+    font-size: 1.5em;
+  }
 }

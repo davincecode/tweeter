@@ -23,36 +23,46 @@
   <title>Tweeter Project</title>
 </head>
 <header>
-  <nav>
-    <div class="navtitle">
-      <a href="/"><img src="images/twitta.png" width="70px"></a>
-      <span>Tweeter</span>
-    </div>
-    <div class="menu-down">
-      <div>Write a new tweet</div>
-      <button class="drop-down" id="toggle-tweet">
-        <i class="fa-solid fa-angles-down"></i>
-      </button>
-    </div>
-  </nav>
-  <section class="header-elements">
-    <img src="images/prof-pic.png" width="200px">
-    <span class="profile-name">davincecode</span>
-  </section>
+<nav>
+  <div class="navtitle">
+    <a href="/"><img src="images/twitta.png" width="70px"></a>
+    <span class="logo">Tweeter</span>
+  </div>
+  <div class="menu-down">
+    <div>Write a new tweet</div>
+    <button class="drop-down" id="toggle-tweet">
+      <i class="fa-solid fa-angles-down"></i>
+    </button>
+  </div>
+</nav>
 </header>
 <body>
-  <main>
-    <div class="new-tweet-container" id="toggle-content">
-    <form action="/tweets" method="POST" class="new-tweet" id="tweet-form">
-      <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
-      <section class="tweet-btn-ctr">
-      <input class="btn-tweet" type="button" id="tweet-it" value="Tweet" />
-      <span class="counter">140</span>
-      </section>
-    </form>
+<div class="wrapper">
+  <div class="content-wrap">
+    <div class="left-wrapper">
+      <div class="left-column">
+        <section class="header-elements">
+          <img src="images/prof-pic.png" width="200px">
+          <span class="profile-name">davincecode</span>
+        </section>
+      </div>
     </div>
-    <article class="container" ></article>
-  </main> 
+    <div class="right-wrapper">
+      <div class="right-column">
+        <div class="new-tweet-container" id="toggle-content">
+          <form action="/tweets" method="POST" class="new-tweet" id="tweet-form">
+            <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
+            <section class="tweet-btn-ctr">
+              <input class="btn-tweet" type="button" id="tweet-it" value="Tweet" />
+              <span class="counter" id="counter">140</span>
+            </section>
+          </form>
+        </div>
+      <article class="container"></article>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <footer>
 <p>davincecode</p>

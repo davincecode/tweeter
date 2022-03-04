@@ -31,25 +31,51 @@ p {
   font-size: 0.8em;
 }
 
-main {
+.wrapper {
   display: block;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+}
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+} */
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.left-wrapper {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.right-wrapper {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  width: 100%;
 }
 
 .new-tweet-container {
   display: none;
-  margin-top: 40px;
-  margin-bottom: 50px;
   width: 100%;
-}
-
-.ask-to-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  font-size: 0.8em;
+  margin-top: 40px;
 }
 
 .tweetPost {
@@ -59,6 +85,7 @@ main {
   width: 100%;
   color: #545454;
   font-size: 18px;
+  margin-top: 40px;
   outline: none;
 }
 
@@ -90,7 +117,6 @@ main {
 }
 
 .tweet-container:hover {
-  //box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   box-shadow: 6px 6px #c3c3c3;
 }
 
@@ -120,6 +146,7 @@ main {
 
 .article-tweet {
   border-bottom: 3px solid #545454;
+  overflow-wrap: anywhere;
 }
 
 .tweetlinks {
@@ -143,3 +170,70 @@ footer {
   align-items: center;
   font-size: 18px;
 }
+
+/* Smartphones: minimum width of 320px to maximum width of around 420px */
+@media only screen and (min-width: 320px) {
+  .header-elements {
+    margin-top: 120px;
+    background-image: url("https://www.transparenttextures.com/patterns/zig-zag.png");
+  }
+
+  .right-column {
+    margin-top: 0px;
+    width: 90%;
+  }
+}
+
+/* Another tablet breakpoint is minimum width of 768px */
+@media only screen and (min-width: 768px) {
+  .header-elements {
+    display: flex;
+    align-self: flex-start;
+    background-image: none;
+  }
+
+  .tweetPost {
+    margin-top: 40px;
+  }
+
+  .wrapper {
+    width: 100vw;
+  }
+
+  .content-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2rem;
+  }
+
+  .left-wrapper {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  .right-wrapper {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 120px;
+  }
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+//@media only screen and (min-width: 1024px) {
+/* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+//}
