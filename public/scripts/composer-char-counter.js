@@ -7,7 +7,7 @@ $(() => {
     if (charCount > 140) {
       counter.css("color", "#ff0000");
       $("#tweet-it").prop("disabled", true);
-      return $("#error-box").prepend("<small>Max character reached!</small>");
+      return $("#error-box").html("<small>Max character reached!</small>");
     }
 
     if (!(charCount > 140)) {
