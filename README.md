@@ -8,11 +8,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Desktop view
 
-!["Desktop"](https://github.com/davincecode/tweeter/blob/4653649ee6ad28877935ee7d3bc66e41bc3dd126/public/images/desktop.gif)
+!["Desktop"](https://github.com/davincecode/tweeter/blob/master/docs/desktop.gif)
 
 ## Mobile responsive
 
-!["Responsive"](https://github.com/davincecode/tweeter/blob/4653649ee6ad28877935ee7d3bc66e41bc3dd126/public/images/responsive.gif)
+!["Responsive"](https://github.com/davincecode/tweeter/blob/master/docs/responsive.gif)
 
 ## Getting Started
 
