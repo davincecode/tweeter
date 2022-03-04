@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(() => {
   //Function that prevents XSS attack
   const escape = function (str) {
@@ -66,7 +61,15 @@ $(() => {
       data: $("#appendPost").serialize(),
     })
       .then(loadTweets)
-      .catch((error) => alert("error", error));
+      .catch((error) =>
+        $("#error-box").append(
+          "<p>Sorry! You cannot post empty tweets!</p>",
+          error
+        )
+      );
+    setTimeout(function () {
+      $("#error-box").remove();
+    }, 3000);
   });
 
   loadTweets();

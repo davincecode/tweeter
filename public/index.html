@@ -50,11 +50,12 @@
     <div class="right-wrapper">
       <div class="right-column">
         <div class="new-tweet-container" id="toggle-content">
+          <div id="error-box"></div>
           <form action="/tweets" method="POST" id="tweet-form">
             <textarea name="text" class="tweetPost" placeholder="What are you humming about?" id="appendPost"></textarea>
             <section class="tweet-btn-ctr">
               <input class="btn-tweet" type="button" id="tweet-it" value="Tweet" />
-              <span class="counter" id="counter">140</span>
+              <span class="counter">140</span>
             </section>
           </form>
         </div>
