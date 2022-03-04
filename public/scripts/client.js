@@ -92,4 +92,17 @@ $(() => {
       $(".counter").text("140");
     }, 500);
   });
+
+  //Scroll Up button
+  $(window).scroll(function () {
+    if ($(this).scrollTop()) {
+      $("#toTop").fadeIn();
+    } else {
+      $("#toTop").fadeOut();
+    }
+  });
+
+  $("#toTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  });
 });
